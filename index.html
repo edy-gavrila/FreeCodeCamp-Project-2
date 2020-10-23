@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <style>
+        body{
+            background-image: linear-gradient(
+                115deg,
+                rgba(58, 58, 158, 0.8),
+                rgba(136, 136, 206, 0.7)
+                ),url(https://cdn.freecodecamp.org/testable-projects-fcc/images/survey-form-background.jpeg);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position:center;
+            width: 100%;
+            height: 100%;
+            top:0;
+            left:0;
+            margin: 0;
+        }
+        #main{
+            padding-top: 35px;
+            z-index: -1;
+            text-align: center;
+            display:grid;
+            grid-template-columns: 1fr 1.5fr 1fr;
+        }
+
+        #title{
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 35px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        #description{
+            color:white;
+            font-size:1.125rem;
+        }
+
+        #form-container{
+            background-color:rgba(21, 21, 53, 0.742);
+            padding:25px;
+            padding-top: 30px;
+            border-radius:5px;
+            text-align:left;
+            position:static;
+            display:block;
+        }
+
+        .labels{
+            color:white;
+            text-align: left;
+        }
+
+        .inputs{
+            border-radius: 5px;
+            height: 40px;
+            width:100%;
+            margin-bottom: 30px;
+        }
+
+        #sugestions{
+            width: 100%;
+            border-radius:5px;
+            margin:bottom: 30px;
+        }
+
+        #submit{
+            width: 100%;
+            background-color: mediumseagreen;
+            height:50px;
+            border-width: 0px;
+            font-size: 20px;
+            color:white;
+            border-radius: 2px;
+        }
+    </style>
+
+    <div id="main">
+        <div></div>
+        <div>
+            <h1 id="title">freeCodeCamp Survey Form</h1>
+            <p id="description"><i>Thank you for taking the time to help us improve the platform</i></p>
+            <div id="form-container">
+                <form id="survey-form">
+                    <label id="name-label" for="name" class="labels">Name:</label><br>
+                    <input type="text" id="name" name="name" class="inputs" placeholder="Enter your name" required>
+                    <label id="email-label" for="email" class="labels">Email:</label><br>
+                    <input type="email" id="email" class="inputs" placeholder="Enter your email" required>
+                    <label id="number-label" for="number" class="labels">Your age(optional):</label><br>
+                    <input type="number" id="number" name="age" class="inputs" placeholder="Enter your age" min="7" max="100">
+                    <label id="role-label" for="dropdown" class="labels">Which option best describes your current role:</label>
+                    <select id="dropdown" class="inputs" name="role">
+                        <option value="default" selected>Select current role</option>
+                        <option value="student">Student</option>
+                        <option value="ftjob">Full time job</option>
+                        <option value="ftlearner">Full time learner</option>
+                        <option value="prefnotsay">Prefer not to say</option>
+                        <option value="other">Other</option>
+                    </select>
+
+                    <label id="caption-label" class="labels">Would you recommend freeCodeCamp to a friend?</label><br>
+
+                    <input type="radio" id="definitely" name="recommend" value="Definitely">
+                    <label id="definitely-label" for="definitely" class="labels">Definitely</label><br>
+
+                    <input type="radio" id="maybe" name="recommend" value="Maybe">
+                    <label id="maybe-label" for="maybe" class="labels">Maybe</label><br>
+
+                    <input type="radio" id="not-sure" name="recommend" value="Not Sure">
+                    <label id="not-sure-label" for="not-sure" class="labels">Not Sure</label><br><br><br>
+
+                    <label id="fav-feat-label" for="fav-feat" class="labels">What is your favourite feature of freeCodeCamp?</label><br>
+                    <select id="fav-feat" class="inputs" name="fav-feat">
+                        <option value="default" selected>Select an option</option>
+                        <option value="challenges">Challenges</option>
+                        <option value="projects">Projects</option>
+                        <option value="comunity">Community</option>
+                        <option value="open-source">Open Source</option>
+                    </select><br>
+
+                    <label id="improvs-label" class="labels">What would you like to see improved? (Check all that apply)</label><br>
+                    <input type="checkbox" id="feb" name="improvs" value="feb">
+                    <label id="feb-label" for="feb" class="labels">Front-end Projects</label><br><br>
+
+                    <input type="checkbox" id="bep" name="improvs" value="bep">
+                    <label id="bep-label" for="bep" class="labels">Back-end Projects</label><br><br>
+
+                    <input type="checkbox" id="dv" name="improvs" value="dv">
+                    <label id="dv-label" for="dv" class="labels">Data Visualisation</label><br><br>
+
+                    <input type="checkbox" id="chal" name="improvs" value="chal">
+                    <label id="chal-label" for="chal" class="labels">Challenges</label><br><br>
+
+                    <input type="checkbox" id="osc" name="improvs" value="osc">
+                    <label id="osc-label" for="osc" class="labels">Open-Source Community</label><br><br>
+
+                    <input type="checkbox" id="ghr" name="improvs" value="ghr">
+                    <label id="ghr-label" for="ghr" class="labels">Gitter-help rooms</label><br><br>
+
+                    <input type="checkbox" id="vids" name="improvs" value="vids">
+                    <label id="vids-label" for="vids" class="labels">Videos</label><br><br>
+
+                    <input type="checkbox" id="cmu" name="improvs" value="cmu">
+                    <label id="cmu-label" for="cmu" class="labels">City Meetups</label><br><br>
+
+                    <input type="checkbox" id="wiki" name="improvs" value="wiki">
+                    <label id="wiki-label" for="wiki" class="labels">Wiki</label><br><br>
+
+                    <input type="checkbox" id="forum" name="improvs" value="forum">
+                    <label id="forum-label" for="forum" class="labels">Forum</label><br><br>
+
+                    <input type="checkbox" id="ac" name="improvs" value="ac">
+                    <label id="ac-label" for="ac" class="labels">Additional Courses</label><br><br>
+
+                    <label id="sugestions-label" for="sugestions" class="labels">Any comments or suggestions?</label><br>
+                    <textarea id="sugestions" rows="6" cols="50" name="sugestions" form="survey-form"></textarea><br><br>
+
+                    <button id="submit" type="Submit">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</html>
